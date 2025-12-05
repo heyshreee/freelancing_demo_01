@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sriram - Freelancing Web Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="logo" id="logo">
+        <a href="#">LikeMindsLtd</a>
+      </div>
+      <ul>
+        <li><a href="#" class="nav-links">HOME</a></li>
+        <li><a href="#about" class="nav-links">ABOUT</a></li>
+        <li><a href="#contact" class="nav-links">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <button class="scroll-top-btn btn" style="opacity: 1">
+      <div class="scroll-top-arrow" id="scroll-top-arrow"></div>
+    </button>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="title">Build Better. Grow Faster.</h1>
+          <p class="subtitle">
+            Reliable freelance web development focused on clean design, smooth
+            performance, and consistent communication — built to support your
+            business goals.
+          </p>
+          <button class="interactive-element btn">
+            <span>Start Exploring</span>
+          </button>
+        </div>
+        <div class="scroll-indicator">
+          <span>SCROLL</span>
+          <div class="divider-vertical" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <div class="scroll-container">
+        <!-- Panel 1:  -->
+        <section class="panel">
+          <div class="panel-content">
+            <!-- Image Wrapper -->
+            <div class="order-mobile-1 order-md-1">
+              <div class="gallery-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1800&auto=format&fit=crop"
+                  alt="Web Design Interface"
+                  class="gallery-img"
+                />
+
+                <div class="img-overlay"></div>
+              </div>
+            </div>
+            <!-- Text Wrapper -->
+            <div class="gallery-text order-mobile-2 order-md-2">
+              <span class="gallery-number text-purple-400"
+                >01 — Web Design</span
+              >
+              <h2 class="gallery-title">Clean Interfaces</h2>
+              <p class="gallery-description text-gray-400">
+                Modern, minimal layouts designed to make navigation effortless
+                and keep users focused on what matters.
+              </p>
+              <a href="#" class="gallery-link text-white-500" style="opacity: 1"
+                >View Project</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel 2:  -->
+        <section class="panel">
+          <div class="panel-content">
+            <!-- Text Wrapper (Swapped order on Desktop) -->
+            <div class="gallery-text order-mobile-2 order-md-1">
+              <span class="gallery-number text-blue-400">02 — Development</span>
+              <h2 class="gallery-title">Solid Foundations</h2>
+              <p class="gallery-description text-gray-400">
+                Fast, scalable, and responsive code built on reliable
+                architecture — optimized for performance and growth.
+              </p>
+              <a href="#" class="gallery-link" style="opacity: 1"
+                >View Project</a
+              >
+            </div>
+            <!-- Image Wrapper -->
+            <div class="order-mobile-1 order-md-2">
+              <div class="gallery-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop"
+                  alt="Development Code"
+                  class="gallery-img"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel 3:  -->
+        <section class="panel">
+          <div class="panel-content">
+            <!-- Image Wrapper -->
+            <div class="order-mobile-1 order-md-1">
+              <div class="gallery-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop"
+                  alt="Visual Identity Neon"
+                  class="gallery-img"
+                />
+              </div>
+            </div>
+            <!-- Text Wrapper -->
+            <div class="gallery-text order-mobile-2 order-md-2">
+              <span class="gallery-number text-pink-400"
+                >03 — Visual Identity</span
+              >
+              <h2 class="gallery-title">Bold Experiences</h2>
+              <p class="gallery-description text-gray-400">
+                Striking visuals and clean interactions that elevate your brand
+                and create a memorable user experience.
+              </p>
+              <a href="#" class="gallery-link opacity-1" style="opacity: 1"
+                >View Project</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel 4: The End -->
+        <section class="panel end-panel">
+          <div class="bg-texture">
+            <img
+              src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2000&auto=format&fit=crop"
+              alt="Dark Gradient Texture"
+              class="gallery-img"
+            />
+          </div>
+          <h2 class="end-title">Ready to Build?</h2>
+          <p
+            class="gallery-description text-gray-400 end-description"
+            style="margin-bottom: 3rem"
+          >
+            Your next project deserves clean design, solid development, and
+            attention to detail. Let’s create something great together.
+          </p>
+          <!-- <button class="cta-button"></button> -->
+          <button class="interactive-element cta-button">
+            <span>Start Your Project</span>
+          </button>
+        </section>
+      </div>
+
+      <section
+        id="playground"
+        class="py-32 w-full min-h-screen flex flex-col items-center justify-center relative"
+      >
+        <div class="text-center mb-16 z-10">
+          <h3
+            class="text-sm font-bold text-purple-400 tracking-widest uppercase mb-2 playground-number"
+          >
+            Interactive Playground
+          </h3>
+          <h2 class="text-4xl md:text-5xl font-bold playground-title">
+            Experience the Motion
+          </h2>
+        </div>
+
+        <div
+          id="grid-container"
+          class="grid grid-cols-8 md:grid-cols-12 gap-2 md:gap-4 p-4 w-full max-w-6xl mx-auto perspective-1000"
+        >
+          <!-- JS will generate boxes -->
+        </div>
+      </section>
+
+      <section id="about" class="py-24 text-white">
+        <div class="max-w-4xl mx-auto px-6 about-content">
+          <!-- Title -->
+          <h2 class="font-bold mb-6 about-title">About Us</h2>
+
+          <!-- Subheading -->
+          <p
+            class="text-xl text-[#b6b6c8] font-medium leading-relaxed mb-8 about-subtitle"
+          >
+            Building Modern, Fast, and Reliable Web Experiences for Businesses
+            That Care About Quality
+          </p>
+
+          <!-- Paragraph 1 -->
+          <p
+            class="text-gray-400 text-base leading-relaxed mb-6 about-paragraph"
+          >
+            I’m a freelance developer specializing in clean, scalable, and
+            performance-driven web solutions. My work combines strong technical
+            foundations with thoughtful design, ensuring every project is
+            reliable, smooth, and easy to maintain.
+          </p>
+
+          <!-- Paragraph 2 -->
+          <p
+            class="text-gray-400 text-base leading-relaxed mb-4 about-paragraph"
+          >
+            I focus on three things that matter to every business:
+          </p>
+
+          <!-- Sub-points -->
+          <div class="space-y-3 mb-8 about-subpoints">
+            <h3
+              class="text-xs font-bold tracking-widest uppercase text-purple-400"
+            >
+              1. Solid Engineering
+            </h3>
+
+            <h3
+              class="text-xs font-bold tracking-widest uppercase text-purple-400"
+            >
+              2. Performance & Usability
+            </h3>
+
+            <h3
+              class="text-xs font-bold tracking-widest uppercase text-purple-400"
+            >
+              3. Clear, Consistent Communication
+            </h3>
+          </div>
+
+          <!-- Highlight Line -->
+          <h4
+            class="text-white-400 font-semibold text-base leading-relaxed border-l-4 border-blue-400 pl-4 about-highlight"
+          >
+            I don’t just deliver files — I deliver stable, maintainable
+            solutions that support long-term growth.
+          </h4>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact" id="contact">
+      <div class="contact-content">
+        <h2 class="contact-title">LET'S TALK</h2>
+        <a href="mailto:srishree0607@gmail.com" class="email-link"
+          >srishree0607@gmail.com</a
+        >
+        <div class="socials">
+          <a href="https://www.instagram.com/wtf._shr">Instagram</a>
+          <a href="https://x.com/srishree0607">Twitter</a>
+          <a href="https://linkedin.com/in/sriram-sriram-41b52532b">LinkedIn</a>
+          <a href="https://github.com/heyshreee">GitHub</a>
+        </div>
+      </div>
+    </section>
+    <footer class="py-8 text-center text-sm text-gray-400">
+      <p>&copy; 2025 Sriram. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

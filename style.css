@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  /* scrollbar-width: none;  */
+  scroll-behavior: smooth;
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+body {
+  background: #050505;
+  font-family: "Space Grotesk", sans-serif;
+  color: white;
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hero {
+  height: calc(100vh - 80px);
+  /* Adjust for navbar height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  background: linear-gradient(45deg, #fff, #a5a5a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #a5a5a5;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #fff;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.interactive-element {
+  position: relative;
+  padding: 1rem 2rem; /* same as px-8 py-4 */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px; /* pill shape */
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+/* Sliding white background */
+.interactive-element::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  transform: scaleX(0); /* hidden initially */
+  transform-origin: left; /* slide from left */
+  transition: transform 0.3s ease-out;
+  z-index: 0;
+}
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px; /* pill shape */
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-out;
+}
+.scroll-top-btn:hover .scroll-top-arrow {
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+.scroll-top-btn:hover {
+  background-color: white;
+}
+.interactive-element span {
+  position: relative;
+  z-index: 1; /* keeps text above overlay */
+}
+
+/* Hover effects */
+.interactive-element:hover {
+  color: black;
+}
+
+.interactive-element:hover::before {
+  transform: scaleX(1); /* reveal background */
+}
+
+section {
+  padding: 4rem 6rem;
+  height: 100vh;
+}
+.projects-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  background: linear-gradient(45deg, #fff, #a5a5a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+}
+.divider-vertical {
+  display: block; /* behaves like a block element */
+  width: 1px; /* w-[1px] */
+  height: 3rem; /* h-12 in Tailwind = 3rem (48px) */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* from-white to-transparent */
+  /* optional: prevent shrinking in flex containers */
+  flex: 0 0 auto;
+  align-self: center;
+  margin: 1rem 0;
+}
+.scroll-top-arrow {
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  transform: rotate(45deg); /* makes it point up */
+}
+
+/* * LAYOUT CONTAINER * */
+.scroll-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+/* * PANEL STYLES * */
+.panel {
+  flex: 0 0 100vw; /* Force full width */
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--bg-neutral-900);
+}
+
+.panel-content {
+  width: 100%;
+  max-width: 72rem; /* max-w-6xl */
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem; /* gap-12 */
+  align-items: center;
+}
+
+/* * IMAGES * */
+.gallery-image-container {
+  position: relative;
+  border-radius: 1rem; /* rounded-2xl */
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.25);
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover Effect: Zoom out image */
+.gallery-image-container:hover .gallery-img {
+  transform: scale(1);
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.gallery-image-container:hover .img-overlay {
+  background-color: transparent;
+}
+
+/* * TYPOGRAPHY * */
+.gallery-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+.gallery-number {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700;
+}
+
+.text-purple {
+  color: var(--accent-purple);
+}
+.text-blue {
+  color: var(--accent-blue);
+}
+.text-pink {
+  color: var(--accent-pink);
+}
+
+.gallery-title {
+  font-size: 3rem; /* text-5xl */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.gallery-description {
+  /* color: var(--text-gray); */
+  font-size: 1.125rem; /* text-lg */
+  max-width: 28rem; /* max-w-md */
+  line-height: 1.6;
+}
+
+.gallery-link {
+  /* color: var(--text-white); */
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.25rem;
+  display: inline-block;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  width: fit-content;
+  
+}
+
+.gallery-link:hover {
+  opacity: 0.8;
+}
+
+/* * FINAL PANEL * */
+.panel.end-panel {
+  background-color: var(--bg-black);
+  text-align: center;
+  flex-direction: column;
+}
+
+.bg-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  pointer-events: none;
+}
+
+.end-title {
+  font-size: 3.75rem; /* text-6xl */
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 1.25rem 2.5rem;
+  /* background-color: white; */
+  /* color: black; */
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 700;
+  font-size: 1.25rem;
+  /* border: none; */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+  background-color: #e5e7eb;
+}
+
+#grid-container {
+  perspective: 1000px;
+}
+
+.grid-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #1e1e1e;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform-style: preserve-3d;
+}
+.grid-box:hover {
+  transform: scale(1.15) translateZ(30px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Contact Section */
+.contact {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #888;
+}
+
+.email-link {
+  font-size: 6vw;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4rem;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #888;
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.socials a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.playground-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+.about-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+.large-text {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  margin: 2rem;
+  line-height: 1.1;
+}
+.about-paragraph {
+  margin-bottom: 2rem;
+}
+.short-desc {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 2rem;
+  line-height: 2;
+}
+footer {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+/* * RESPONSIVE * */
+@media (min-width: 768px) {
+  .panel-content {
+    grid-template-columns: repeat(2, 1fr); /* Split layout on desktop */
+  }
+
+  .gallery-title {
+    font-size: 4.5rem; /* md:text-7xl */
+  }
+
+  .end-title {
+    font-size: 5rem; /* md:text-9xl */
+  }
+
+  /* Ordering for Zig-Zag effect */
+  .order-md-1 {
+    order: 1;
+  }
+  .order-md-2 {
+    order: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile Stack Order */
+  .order-mobile-1 {
+    order: 1;
+  } /* Text first on mobile usually better, or image */
+  .order-mobile-2 {
+    order: 2;
+  }
+
+  .gallery-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .gallery-description {
+    text-align: center;
+  }
+}
