@@ -2,6 +2,8 @@
 
 A modern, dynamic demo website designed for freelance clients, featuring advanced animations powered by GSAP.
 
+![Freelancer Demo](freelancer-mov.gif)
+
 ## 🚀 Technologies Used
 
 - **HTML5**: Semantic structure.
