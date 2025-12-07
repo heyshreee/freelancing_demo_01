@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import  { useRef, useEffect } from "react";
 import { aboutAnimation } from "./About.animation"; // Adjust path if needed
 
 export const About = () => {

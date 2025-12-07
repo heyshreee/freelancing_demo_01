@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 import { contactAnimation } from "./Contact.animation"; // Adjust path if needed
 

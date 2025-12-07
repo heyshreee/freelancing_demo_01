@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import  { useRef, useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { footerAnimation } from "./Footer.animation"; // Adjust path if needed
 

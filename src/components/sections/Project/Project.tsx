@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { projectAnimation } from "./Project.animation"; // Adjust path if needed
 
